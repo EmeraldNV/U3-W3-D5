@@ -47,7 +47,7 @@ function HomepageComponent(props: HomepageProps) {
               </Col>
               
               <Col xs={12} className="SecondaryCardContainer d-flex flex-wrap">
-                {props.songs.map((card) => (
+                {props.songs.slice(0,12).map((card) => (
                   <SecondaryCardComponent
                     key={card.id}
                     url={card.album.cover_medium} //

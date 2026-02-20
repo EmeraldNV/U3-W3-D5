@@ -4,25 +4,25 @@ import "./SidebarComponent.css";
 import { useEffect, useState } from "react";
 import type { IDataSong, SidebarProps } from "../../../assets/interfaces/interface.MainCardComponent";
 
-const SidebarComponent = ({onSearchResults}:SidebarProps) => {
+const SidebarComponent = ({ onSearchResults }: SidebarProps) => {
   const [author, setAuthor] = useState("eminem");
 
- const fetchSongs = async (song: string) => {
-  try {
-    const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${song}`);
-    
-    if (response.ok) {
-      const result = await response.json();
-      const songsArray = result.data as IDataSong[];
-      onSearchResults(songsArray);
-      return songsArray;
-    } else {
-      throw new Error(`Deezer Error: ${response.status}`);
+  const fetchSongs = async (song: string) => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${song}`);
+
+      if (response.ok) {
+        const result = await response.json();
+        const songsArray = result.data as IDataSong[];
+        onSearchResults(songsArray);
+        return songsArray;
+      } else {
+        throw new Error(`Deezer Error: ${response.status}`);
+      }
+    } catch (error) {
+      console.error(error);
     }
-  } catch (error) {
-    console.error(error);
-  }
-};
+  };
 
   const setFetch = (e) => {
     setAuthor(e.currentTarget.value);
@@ -39,7 +39,7 @@ const SidebarComponent = ({onSearchResults}:SidebarProps) => {
   }, [author]);
 
   return (
-    <div className="sidebar-container d-none d-md-block vh-100">
+    <div className="sidebar-container d-none d-md-block ">
       <div className="sidebar-logo">
         <Apple size={28} className="me-2" />
         <span>Music</span>
