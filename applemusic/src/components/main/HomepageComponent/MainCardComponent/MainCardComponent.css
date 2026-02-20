@@ -1,0 +1,11 @@
+.mainCard {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+
+}
+
+.imgMainCard {
+    width: 100%;
+
+}
