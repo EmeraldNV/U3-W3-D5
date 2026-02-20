@@ -41,11 +41,12 @@ function HomepageComponent(props: HomepageProps) {
                   />
                 ))}
               </Col>
-              <Col xs={12} className="SecondaryCardContainer d-flex  flex-wrap mt-5">
+              <Col xs={12} className="SecondaryCardContainer d-flex  flex-wrap mt-5 ">
                 <h4 className="my-4">Nuovi episodi radio</h4>
                 <hr className="hr bg-light w-100" />
               </Col>
-              <Col xs={12} className="SecondaryCardContainer d-flex">
+              
+              <Col xs={12} className="SecondaryCardContainer d-flex flex-wrap">
                 {props.songs.map((card) => (
                   <SecondaryCardComponent
                     key={card.id}
@@ -54,6 +55,7 @@ function HomepageComponent(props: HomepageProps) {
                   />
                 ))}
               </Col>
+              
             </Col>
           </Col>
         </Row>
